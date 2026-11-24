@@ -15,10 +15,13 @@ ENTRY = (
 )
 
 
-def main() -> None:
-    output_path = Path("/output/entry.txt")
+def write_entry(output_path: Path) -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(ENTRY, encoding="utf-8")
+
+
+def main() -> None:
+    write_entry(Path("/output/entry.txt"))
 
 
 if __name__ == "__main__":
